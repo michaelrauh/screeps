@@ -1,0 +1,22 @@
+{
+  "name": "screeps",
+  "version": "1.0.0",
+  "description": "Code for the MMORPG screeps",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelrauh/screeps.git"
+  },
+  "author": "Michael Rauh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelrauh/screeps/issues"
+  },
+  "homepage": "https://github.com/michaelrauh/screeps#readme",
+  "dependencies": {
+    "jest": "^23.6.0"
+  }
+}
