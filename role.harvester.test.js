@@ -51,3 +51,15 @@ test('creep harvests from a source if it is adjacent', () => {
   subject.run(creep, null)
   td.verify(creep.harvest({pos: { x: 5, y: 17 }}))
 })
+
+test('moves toward the spawn if it is at capacity', () => {
+  creep.pos = {x: 1, y: 1}
+  creep.carry.energy = 5
+  creep.carryCapacity = 5
+  spawn = td.object()
+  spawn.pos = {x: 27, y: 39}
+
+  subject.run(creep, spawn)
+
+  td.verify(creep.moveTo(26, 39))
+})
