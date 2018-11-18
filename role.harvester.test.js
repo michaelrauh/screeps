@@ -38,3 +38,10 @@ test('Does not move if it is adjacent to the source', () => {
   subject.run(creep, null)
   td.verify(creep.moveTo(), {times: 0, ignoreExtraArgs: true})
 })
+
+test('creep harvests from a source if it is adjacent', () => {
+  creep.pos = {x: 4, y: 17}
+
+  subject.run(creep, null)
+  td.verify(creep.harvest({pos: { x: 5, y: 17 }}))
+})
