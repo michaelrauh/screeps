@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/michaelrauh/screeps#readme",
   "dependencies": {
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "testdouble": "^3.8.2"
   }
 }
