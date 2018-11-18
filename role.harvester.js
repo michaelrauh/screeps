@@ -1,23 +1,28 @@
 var roleHarvester = {
   run: function(creep, spawn) {
-    var first_source = creep.room.find(FIND_SOURCES)[0];
-    var current_location = {
-      x: creep.pos.x,
-      y: creep.pos.y
-    }
+    var action
+    var target
 
     if (creep.carry.energy < creep.carryCapacity) {
-      var desired_location = findDesiredLocation(first_source)
-      var action = function() {
+      var first_source = creep.room.find(FIND_SOURCES)[0];
+      target = first_source
+      action = function() {
         creep.harvest(first_source)
       }
     } else {
-      var desired_location = findDesiredLocation(spawn)
-      var action = function() {
+      target = spawn
+      action = function() {
         creep.transfer(spawn, RESOURCE_ENERGY)
       }
     }
 
+    var desired_location = findDesiredLocation(target)
+
+    var current_location = {
+      x: creep.pos.x,
+      y: creep.pos.y
+    }
+    
     if (adjacent(desired_location, current_location)) {
       action()
     } else {
@@ -26,11 +31,10 @@ var roleHarvester = {
   }
 };
 
-function findDesiredLocation(source) {
-  var first_source_pos = source.pos
+function findDesiredLocation(location) {
   return {
-    x: first_source_pos.x,
-    y: first_source_pos.y
+    x: location.pos.x,
+    y: location.pos.y
   }
 }
 
