@@ -63,3 +63,15 @@ test('moves toward the spawn if it is at capacity', () => {
 
   td.verify(creep.moveTo(26, 39))
 })
+
+test('transfers to the spawn if it is at capacity and in position', () => {
+  creep.pos = {x: 26, y: 39}
+  creep.carry.energy = 5
+  creep.carryCapacity = 5
+  var real = {pos: {x: 27, y: 39}}
+  spawn = td.object(real)
+
+  subject.run(creep, spawn)
+
+  td.verify(creep.transfer(spawn, RESOURCE_ENERGY))
+})
