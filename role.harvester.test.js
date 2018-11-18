@@ -31,7 +31,7 @@ test('moves toward the first source found if it is not adjacent', () => {
 
   subject.run(creep, null)
 
-  td.verify(creep.moveTo(4, 17))
+  td.verify(creep.moveTo(5, 17))
 })
 
 test('Does not move if it is adjacent to the source', () => {
@@ -61,7 +61,7 @@ test('moves toward the spawn if it is at capacity', () => {
 
   subject.run(creep, spawn)
 
-  td.verify(creep.moveTo(26, 39))
+  td.verify(creep.moveTo(27, 39))
 })
 
 test('transfers to the spawn if it is at capacity and in position', () => {
