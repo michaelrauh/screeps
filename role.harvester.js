@@ -21,17 +21,15 @@ var roleHarvester = {
     var current_location = {x: creep.pos.x, y: creep.pos.y}
     var desired_location = findDesiredLocation(first_source)
 
-    approach_and_harvest(creep, first_source, desired_location, current_location)
+    if(creep.carry.energy < creep.carryCapacity) {
+      if (!_.isEqual(desired_location, current_location)) {
+        creep.moveTo(desired_location.x, desired_location.y)
+      } else {
+        creep.harvest(first_source)
+      }
+    }
   }
 };
-
-function approach_and_harvest(creep, first_source, desired_location, current_location) {
-  if (!_.isEqual(desired_location, current_location)) {
-    creep.moveTo(desired_location.x, desired_location.y)
-  } else {
-    creep.harvest(first_source)
-  }
-}
 
 function findDesiredLocation(source) {
   var first_source_pos = source.pos

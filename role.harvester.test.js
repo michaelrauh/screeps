@@ -26,6 +26,8 @@ afterEach(() => {
 
 test('moves toward the first source found if it is not adjacent', () => {
   creep.pos = {x: 1, y: 1}
+  creep.carry.energy = 1
+  creep.carryCapacity = 5
 
   subject.run(creep, null)
 
@@ -34,6 +36,8 @@ test('moves toward the first source found if it is not adjacent', () => {
 
 test('Does not move if it is adjacent to the source', () => {
   creep.pos = {x: 4, y: 17}
+  creep.carry.energy = 1
+  creep.carryCapacity = 5
 
   subject.run(creep, null)
   td.verify(creep.moveTo(), {times: 0, ignoreExtraArgs: true})
@@ -41,6 +45,8 @@ test('Does not move if it is adjacent to the source', () => {
 
 test('creep harvests from a source if it is adjacent', () => {
   creep.pos = {x: 4, y: 17}
+  creep.carry.energy = 1
+  creep.carryCapacity = 5
 
   subject.run(creep, null)
   td.verify(creep.harvest({pos: { x: 5, y: 17 }}))
