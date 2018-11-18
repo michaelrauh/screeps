@@ -1,53 +1,27 @@
+var modes = require("./modes")
 var roleHarvester = {
   run: function(creep, spawn) {
-
     var mode = setMode(creep, spawn)
 
-    var desired_location = findDesiredLocation(mode.target)
-
-    var current_location = {
-      x: creep.pos.x,
-      y: creep.pos.y
-    }
-
-    if (adjacent(desired_location, current_location)) {
+    if (adjacent(creep, mode.target)) {
       mode.action()
     } else {
-      creep.moveTo(desired_location.x, desired_location.y)
+      creep.moveTo(mode.target.pos.x, mode.target.pos.y)
     }
   }
 };
 
 function setMode(creep, spawn) {
   if (creep.carry.energy < creep.carryCapacity) {
-    var first_source = creep.room.find(FIND_SOURCES)[0];
-    target = first_source
-    action = function() {
-      creep.harvest(first_source)
-    }
+    return modes.harvest(creep.room.find(FIND_SOURCES)[0], creep)
   } else {
-    target = spawn
-    action = function() {
-      creep.transfer(spawn, RESOURCE_ENERGY)
-    }
-  }
-
-  return {
-    target: target,
-    action: action
+    return modes.deposit(creep, spawn)
   }
 }
 
-function findDesiredLocation(location) {
-  return {
-    x: location.pos.x,
-    y: location.pos.y
-  }
-}
-
-function adjacent(desired_location, current_location) {
-  var nearX = Math.abs(desired_location.x - current_location.x) < 2
-  var nearY = Math.abs(desired_location.y - current_location.y) < 2
+function adjacent(source, target) {
+  var nearX = Math.abs(source.pos.x - target.pos.x) < 2
+  var nearY = Math.abs(source.pos.y - target.pos.y) < 2
 
   return nearX && nearY
 }
