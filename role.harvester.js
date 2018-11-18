@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 var roleHarvester = {
   run: function(creep, spawn) {
     var first_source = creep.room.find(FIND_SOURCES)[0];
