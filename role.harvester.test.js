@@ -16,9 +16,9 @@ test('moves toward the first source found', () => {
   room.find = find
   creep.room = room
   creep.moveTo = moveTo
-  td.when(creep.room.find(FIND_SOURCES)).thenReturn(["source"])
+  td.when(creep.room.find(FIND_SOURCES)).thenReturn([{pos: { x: 5, y: 17 }}])
 
   subject.run(creep, null)
 
-  td.verify(creep.moveTo("source"))
+  td.verify(creep.moveTo(4, 17))
 })

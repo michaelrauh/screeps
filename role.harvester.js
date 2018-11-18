@@ -16,9 +16,9 @@
 
 var roleHarvester = {
   run: function(creep, spawn) {
-    var first_source = creep.room.find(FIND_SOURCES)[0];
+    var first_source_pos = creep.room.find(FIND_SOURCES)[0].pos;
 
-    creep.moveTo(first_source)
+    creep.moveTo(first_source_pos.x -1, first_source_pos.y)
   }
 };
 
