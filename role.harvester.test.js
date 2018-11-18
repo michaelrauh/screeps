@@ -31,3 +31,10 @@ test('moves toward the first source found if it is not adjacent', () => {
 
   td.verify(creep.moveTo(4, 17))
 })
+
+test('Does not move if it is adjacent to the source', () => {
+  creep.pos = {x: 4, y: 17}
+
+  subject.run(creep, null)
+  td.verify(creep.moveTo(), {times: 0, ignoreExtraArgs: true})
+})
