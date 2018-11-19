@@ -16,4 +16,13 @@ function deposit(creep, spawn) {
   }
 }
 
-module.exports = {harvest, deposit}
+function upgradeRoom(creep, roomController) {
+  return {
+    target: roomController,
+    action: function() {
+      creep.upgradeController(roomController)
+    }
+  }
+}
+
+module.exports = { harvest, deposit, upgradeRoom }
