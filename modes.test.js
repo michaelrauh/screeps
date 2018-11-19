@@ -9,6 +9,10 @@ beforeEach(() => {
   controller = {fake: "controller"}
 });
 
+afterEach(() => {
+  td.reset()
+});
+
 test('upgrade controller mode has a target of the passed in controller', () => {
   var result = subject.upgradeRoom(creep, controller)
 

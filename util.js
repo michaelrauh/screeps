@@ -5,5 +5,12 @@ function adjacent(source, target) {
   return nearX && nearY
 }
 
+function approachAndAct(creep, mode) {
+    if (adjacent(creep, mode.target)) {
+      mode.action()
+    } else {
+      creep.moveTo(mode.target.pos.x, mode.target.pos.y)
+    }
+}
 
-module.exports = {adjacent}
+module.exports = {adjacent, approachAndAct}
