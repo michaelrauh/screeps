@@ -1,8 +1,9 @@
+
+
 var extensionManager = {
     run: function(spawn, room) {
-      if (room.controller.level == 2) {
-        centerX = spawn.pos.x
-        centerY = spawn.pos.y - 2
+
+      function addFive(centerX, centerY) {
         room.createConstructionSite(centerX - 4, centerY, STRUCTURE_EXTENSION)
         room.createConstructionSite(centerX - 2, centerY, STRUCTURE_EXTENSION)
         room.createConstructionSite(centerX, centerY, STRUCTURE_EXTENSION)
@@ -10,19 +11,7 @@ var extensionManager = {
         room.createConstructionSite(centerX + 4, centerY, STRUCTURE_EXTENSION)
       }
 
-      if (room.controller.level == 3) {
-        centerX = spawn.pos.x
-        centerY = spawn.pos.y - 4
-        room.createConstructionSite(centerX - 4, centerY, STRUCTURE_EXTENSION)
-        room.createConstructionSite(centerX - 2, centerY, STRUCTURE_EXTENSION)
-        room.createConstructionSite(centerX, centerY, STRUCTURE_EXTENSION)
-        room.createConstructionSite(centerX + 2, centerY, STRUCTURE_EXTENSION)
-        room.createConstructionSite(centerX + 4, centerY, STRUCTURE_EXTENSION)
-      }
-
-      if (room.controller.level == 4) {
-        centerX = spawn.pos.x
-        centerY = spawn.pos.y - 6
+      function addTen(centerX, centerY) {
         room.createConstructionSite(centerX - 9, centerY, STRUCTURE_EXTENSION)
         room.createConstructionSite(centerX - 7, centerY, STRUCTURE_EXTENSION)
         room.createConstructionSite(centerX - 5, centerY, STRUCTURE_EXTENSION)
@@ -33,6 +22,18 @@ var extensionManager = {
         room.createConstructionSite(centerX + 5, centerY, STRUCTURE_EXTENSION)
         room.createConstructionSite(centerX + 7, centerY, STRUCTURE_EXTENSION)
         room.createConstructionSite(centerX + 9, centerY, STRUCTURE_EXTENSION)
+      }
+
+      if (room.controller.level == 2) {
+        addFive(spawn.pos.x, spawn.pos.y - 2)
+      }
+
+      if (room.controller.level == 3) {
+        addFive(spawn.pos.x, spawn.pos.y - 4)
+      }
+
+      if (room.controller.level == 4) {
+        addTen(spawn.pos.x, spawn.pos.y - 6)
       }
     }
 };
