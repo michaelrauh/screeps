@@ -1,14 +1,3 @@
-function addFive(room, centerX, centerY) {
-  for (var i = -4; i <= 4; i+=2) {
-    room.createConstructionSite(centerX + i, centerY, STRUCTURE_EXTENSION)
-  }
-}
-
-function addTen(room, centerX, centerY) {
-  for (var i = -9; i <= 9; i+=2) {
-    room.createConstructionSite(centerX + i, centerY, STRUCTURE_EXTENSION)
-  }
-}
 
 var extensionManager = {
     run: function(spawn, room) {
@@ -26,4 +15,15 @@ var extensionManager = {
     }
 };
 
+function addFive(room, centerX, centerY) {
+  for (var i = -4; i <= 4; i+=2) {
+    room.createConstructionSite(centerX + i, centerY, STRUCTURE_EXTENSION)
+  }
+}
+
+function addTen(room, centerX, centerY) {
+  for (var i = -9; i <= 9; i+=2) {
+    room.createConstructionSite(centerX + i, centerY, STRUCTURE_EXTENSION)
+  }
+}
 module.exports = extensionManager
