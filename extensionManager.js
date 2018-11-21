@@ -24,33 +24,17 @@ var extensionManager = {
         room.createConstructionSite(centerX + 9, centerY, STRUCTURE_EXTENSION)
       }
 
-      if (room.controller.level == 2) {
-        addFive(spawn.pos.x, spawn.pos.y - 2)
+      functions = {
+        1: function(){},
+        2: function(){addFive(spawn.pos.x, spawn.pos.y - 2)},
+        3: function(){addFive(spawn.pos.x, spawn.pos.y - 4)},
+        4: function(){addTen(spawn.pos.x, spawn.pos.y - 6)},
+        5: function(){addTen(spawn.pos.x, spawn.pos.y - 8)},
+        6: function(){addTen(spawn.pos.x, spawn.pos.y - 10)},
+        7: function(){addTen(spawn.pos.x, spawn.pos.y - 12)},
+        8: function(){addTen(spawn.pos.x, spawn.pos.y - 14)}
       }
-
-      if (room.controller.level == 3) {
-        addFive(spawn.pos.x, spawn.pos.y - 4)
-      }
-
-      if (room.controller.level == 4) {
-        addTen(spawn.pos.x, spawn.pos.y - 6)
-      }
-
-      if (room.controller.level == 5) {
-        addTen(spawn.pos.x, spawn.pos.y - 8)
-      }
-
-      if (room.controller.level == 6) {
-        addTen(spawn.pos.x, spawn.pos.y - 10)
-      }
-
-      if (room.controller.level == 7) {
-        addTen(spawn.pos.x, spawn.pos.y - 12)
-      }
-
-      if (room.controller.level == 8) {
-        addTen(spawn.pos.x, spawn.pos.y - 14)
-      }
+      functions[room.controller.level]()
     }
 };
 
