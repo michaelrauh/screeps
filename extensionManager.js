@@ -1,22 +1,13 @@
 function addFive(room, centerX, centerY) {
-  room.createConstructionSite(centerX - 4, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX - 2, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX + 2, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX + 4, centerY, STRUCTURE_EXTENSION)
+  for (var i = -4; i <= 4; i+=2) {
+    room.createConstructionSite(centerX + i, centerY, STRUCTURE_EXTENSION)
+  }
 }
 
 function addTen(room, centerX, centerY) {
-  room.createConstructionSite(centerX - 9, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX - 7, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX - 5, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX - 3, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX - 1, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX + 1, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX + 3, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX + 5, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX + 7, centerY, STRUCTURE_EXTENSION)
-  room.createConstructionSite(centerX + 9, centerY, STRUCTURE_EXTENSION)
+  for (var i = -9; i <= 9; i+=2) {
+    room.createConstructionSite(centerX + i, centerY, STRUCTURE_EXTENSION)
+  }
 }
 
 var extensionManager = {
