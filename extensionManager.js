@@ -35,6 +35,22 @@ var extensionManager = {
       if (room.controller.level == 4) {
         addTen(spawn.pos.x, spawn.pos.y - 6)
       }
+
+      if (room.controller.level == 5) {
+        addTen(spawn.pos.x, spawn.pos.y - 8)
+      }
+
+      if (room.controller.level == 6) {
+        addTen(spawn.pos.x, spawn.pos.y - 10)
+      }
+
+      if (room.controller.level == 7) {
+        addTen(spawn.pos.x, spawn.pos.y - 12)
+      }
+
+      if (room.controller.level == 8) {
+        addTen(spawn.pos.x, spawn.pos.y - 14)
+      }
     }
 };
 

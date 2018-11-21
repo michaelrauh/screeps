@@ -67,11 +67,66 @@ test('creates 10 construction sites in a row south of the spawn when the control
   td.verify(room.createConstructionSite(109, 94, STRUCTURE_EXTENSION))
 });
 
-// 1:0
-// 2:5
-// 3:10
-// 4:20
-// 5:30
-// 6:40
-// 7:50
-// 8:60
+test('creates 10 construction sites in a row south of the spawn when the controller level is 5', () => {
+  room.controller.level = 5
+  subject.run(spawn, room)
+
+  td.verify(room.createConstructionSite(91, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(93, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(95, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(97, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(99, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(101, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(103, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(105, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(107, 92, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(109, 92, STRUCTURE_EXTENSION))
+});
+
+test('creates 10 construction sites in a row south of the spawn when the controller level is 6', () => {
+  room.controller.level = 6
+  subject.run(spawn, room)
+
+  td.verify(room.createConstructionSite(91, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(93, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(95, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(97, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(99, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(101, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(103, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(105, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(107, 90, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(109, 90, STRUCTURE_EXTENSION))
+});
+
+test('creates 10 construction sites in a row south of the spawn when the controller level is 7', () => {
+  room.controller.level = 7
+  subject.run(spawn, room)
+
+  td.verify(room.createConstructionSite(91, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(93, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(95, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(97, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(99, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(101, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(103, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(105, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(107, 88, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(109, 88, STRUCTURE_EXTENSION))
+});
+
+test('creates 10 construction sites in a row south of the spawn when the controller level is 8', () => {
+  room.controller.level = 8
+  subject.run(spawn, room)
+
+  td.verify(room.createConstructionSite(91, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(93, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(95, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(97, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(99, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(101, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(103, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(105, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(107, 86, STRUCTURE_EXTENSION))
+  td.verify(room.createConstructionSite(109, 86, STRUCTURE_EXTENSION))
+});
