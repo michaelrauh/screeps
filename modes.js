@@ -25,4 +25,13 @@ function upgradeRoom(creep, roomController) {
   }
 }
 
-module.exports = { harvest, deposit, upgradeRoom }
+function build(creep, constructionSite) {
+  return {
+    target: constructionSite,
+    action: function() {
+      creep.build(constructionSite)
+    }
+  }
+}
+
+module.exports = { harvest, deposit, upgradeRoom, build }
