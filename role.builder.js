@@ -21,7 +21,7 @@ function setBias(creep) {
 
 function setMode(creep) {
   if (creep.memory.bias == "harvest") {
-    return modes.harvest(creep.room.find(FIND_SOURCES)[0], creep)
+    return modes.harvest(creep.room.find(FIND_SOURCES).sort()[0], creep)
   } else {
     return modes.build(creep, creep.room.find(FIND_CONSTRUCTION_SITES)[0])
   }
